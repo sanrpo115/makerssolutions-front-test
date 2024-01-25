@@ -1,0 +1,32 @@
+@import "../../assets/scss/variables";
+
+.container__table {
+  width: 100%;
+  margin-top: 30px;
+  .table {
+    &-striped {
+      thead {
+        tr {
+          th {
+            color: $c-bl;
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            &.container__table--actions {
+              button {
+                &.btn {
+                  &:first-child {
+                    margin-right: 10px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
