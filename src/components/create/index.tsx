@@ -5,7 +5,7 @@ import { CrudAppContext } from "../../context/context";
 
 const Create = () => {
 
-  const [values, setValues] = useState({});
+  const [values, setValues] = useState({firstname: "", lastname: "", email: ""});
   const [errors, setErrors] = useState({});
   const { saveMaker, updateMaker, updateValues } = useContext(CrudAppContext);
 
@@ -31,14 +31,15 @@ const Create = () => {
       setErrors({});
       if(values && values['id']) {
         updateMaker(values);
+        setValues({firstname: "", lastname: "", email: ""});
       } else {
         saveMaker(values);
+        setValues({firstname: "", lastname: "", email: ""});
       }
     } else {
       console.log(newErrors)
       setErrors((prevErrors) => ({ ...prevErrors, ...newErrors }));
     }
-
   };
 
   return (

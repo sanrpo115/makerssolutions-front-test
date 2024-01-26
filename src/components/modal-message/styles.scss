@@ -1,0 +1,14 @@
+@import "../../assets/scss/variables";
+
+.modal {
+  .modal-dialog {
+    .modal-content {
+      .empty {
+        padding:20px 10px;
+      }
+    }
+    .modal-footer {
+      padding: 10px;
+    }
+  }
+}
