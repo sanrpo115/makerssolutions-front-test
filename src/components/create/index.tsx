@@ -11,7 +11,6 @@ const Create = () => {
 
   useEffect(() => {
     if(updateValues.id) {
-      console.log('Se van a actualizar', updateValues)
       setValues({...values, ...updateValues});
     }
   }, [updateValues]);

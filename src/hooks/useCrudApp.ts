@@ -16,7 +16,7 @@ export const useCrudApp = () => {
     );
     if (response !== null) {
       console.log(response);
-      setListMakers(response);
+      setListMakers(response.sort((a: any, b: any) => a.id - b.id));
     }
   }
 
@@ -40,7 +40,12 @@ export const useCrudApp = () => {
   }
 
   const updateMaker = async (values: any) => {
-    console.log("editar", values);
+    const response = await helpSendRequest(
+      `${process.env.REACT_APP_URL_BASE}${process.env.REACT_APP_PATH}`, "PUT", JSON.stringify(values)
+    );
+    if (response !== null) {
+      consultListMakers();
+    }
   }
 
   return {
